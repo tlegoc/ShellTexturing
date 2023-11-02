@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Cursor.lockState != CursorLockMode.Locked) return;
+        
         // rotation
         _yaw += MouseSpeed * Input.GetAxis("Mouse X");
         _pitch -= MouseSpeed * Input.GetAxis("Mouse Y");
